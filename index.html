@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Home | Divine Yoga</title>
+  </head>
+  <body>
+    <nav aria-label="Primary Navigation" class="navbar">
+      <div class="nav__logo">
+          <img src="assets/logo.png" alt="Divine Yoga logo" />
+          <span>DIVINE YOGA</span>
+      </div>
+      <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="index.html" >Home</a></li>
+          <li class="link"><a href="class.html" >Classes</a></li>
+          <li class="link"><a href="membership.html">About</a></li>
+          <li class="link"><a href="blog.html">Blog</a></li>
+          <li class="link"><a href="contact.html">Contact</a></li>
+          <li class="link"><a href="signin.html">Signup/signin</a></li>
+      </ul>
+  
+      <div class="hamburger" id="hamburger">
+          ☰
+      </div>
+  
+      <button id="nav-tts-btn" aria-label="Hear the navigation menu" tabindex="0">
+          🔊 Hear Menu
+      </button>
+  </nav>
+  
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
+
+    <div class="tts-container">
+      <button
+        id="tts-btn"
+        class="tts-btn"
+        aria-label="Click to hear the class details"
+        tabindex="0"
+      >
+        🔊
+      </button>
+    </div>
+
+    <header id="home">
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>Effective YOGA</h1>
+          <h2>Do yoga today for better tomorrow</h2>
+          <button class="btn">
+            <a href="registration.html">15 Days free trial</a>
+          </button>
+        </div>
+        <div class="header__image">
+          <img src="assets/po1.png" />
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container why__container">
+      <div class="why__image">
+        <img src="assets/po2.png" />
+      </div>
+      <div class="why__content">
+        <h2 class="section__header">Why You Should Go To Yoga</h2>
+      
+        <button
+          id="why-tts-btn"
+          aria-label="Hear why you should go to yoga"
+          tabindex="0"
+        >
+          🔊 Hear This Section
+        </button>
+        <p>
+          Engaging in yoga offers a holistic approach to wellness, encompassing
+          both physical and mental benefits. Through a series of poses,
+          stretches, and muscle strength. Its meditative aspects encourage
+          mindfulness, reducing stress and anxiety while promoting a sense of
+          inner peace.
+        </p>
+        <ul>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            Yoga boosts brain power
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            Yoga helps you to breathe better
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            Yoga improves your strength
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            Yoga helps you to focus
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            Yoga helps give meaning to your day
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero" id="hero">
+      <div class="section__container hero__container">
+        <div class="hero__card">
+          <span><img src="assets/icon-1.png" alt="hero" /></span>
+          <h4>Healthy Lifestyle</h4>
+          <p>
+            Embrace a healthy lifestyle through the transformative power of yoga
+            and cultivate physical vitality and inner peace.
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-2.png" /></span>
+          <h4>Body & Mind Balance</h4>
+          <p>
+            Through purposeful poses and mindful breathing, yoga cultivates a
+            strong, flexible body while nurturing inner calm.
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-3.png" /></span>
+          <h4>Meditation Practice</h4>
+          <p>
+            Discover inner serenity and mindfulness as you cultivate a profound
+            connection with the present moment.
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-4.png" /></span>
+          <h4>Self-Care</h4>
+          <p>
+            Discover the transformative power of self-care through yoga and
+            embrace moments of tranquility and mindfulness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      
+      function readText(text) {
+        if ("speechSynthesis" in window) {
+          const speech = new SpeechSynthesisUtterance(text);
+          speech.lang = "en-US";
+          window.speechSynthesis.speak(speech);
+        } else {
+          alert("Text-to-Speech is not supported in this browser.");
+        }
+      }
+
+      document
+        .getElementById("tts-btn")
+        .addEventListener("click", function () {
+          readText(
+            "Welcome to Divine Yoga, where we guide you on a journey to inner peace, health, and mindfulness through holistic yoga practices."
+          );
+        });
+
+      // TTS for Navigation Menu
+      document
+        .getElementById("nav-tts-btn")
+        .addEventListener("click", function () {
+          readText(
+            "Menu: Home, Classes, Membership, About, Blog, Contact."
+          );
+        });
+
+      // TTS for Why Yoga Section
+      document
+        .getElementById("why-tts-btn")
+        .addEventListener("click", function () {
+          readText(
+            "Why You Should Go To Yoga. Engaging in yoga offers a holistic approach to wellness, encompassing both physical and mental benefits..."
+          );
+        });
+
+      // Trigger TTS on focus for links and buttons
+      const buttons = document.querySelectorAll("button, a");
+
+      buttons.forEach((button) => {
+        button.addEventListener("focus", () => {
+          readText(button.textContent || button.ariaLabel);
+        });
+      });
+    </script>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <p>
+            Welcome to YogaLife, where we bring mindfulness and peace to your
+            everyday life through yoga. Join us for a journey of wellness and
+            balance.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>CONTACT US</h3>
+          <p>
+            <i class="fa fa-map-marker"></i> Royal Embassy,Near Tiger
+            circe,Manipal,Karnataka,576104
+          </p>
+          <p><i class="fa fa-phone"></i> +91 9087654321</p>
+          <p><i class="fa fa-envelope"></i> info@divineyoga.com</p>
+        </div>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

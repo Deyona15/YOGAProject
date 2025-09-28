@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Class | Divine Yoga</title>
+  </head>
+
+  <body>
+    <nav aria-label="Primary Navigation" class="navbar">
+      <div class="nav__logo">
+        <img src="assets/logo.png" alt="Divine Yoga logo" />
+        <span>DIVINE YOGA</span>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="class.html" class="dropbtn">Classes</a>
+          <div class="dropdown-content">
+            <a href="#stress">Stress</a>
+            <a href="#an">Anger</a>
+            <a href="#de">Depression</a>
+            <a href="#we">Weight loss</a>
+            <a href="#im">Immunity</a>
+          </div>
+        </li>
+        <li class="link">
+          <a href="membership.html" aria-label="Go to Membership Page" tabindex="0">Membership</a>
+        </li>
+        <li class="link">
+          <a href="about.html" aria-label="Go to About Page" tabindex="0">About</a>
+        </li>
+        <li class="link">
+          <a href="blog.html" aria-label="Go to Blog Page" tabindex="0">Blog</a>
+        </li>
+        <li class="link">
+          <a href="contact.html" aria-label="Go to Contact Page" tabindex="0">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Hamburger Icon for Mobile Menu -->
+      <div class="hamburger" id="hamburger">
+        ☰
+      </div>
+      <button id="nav-tts-btn" aria-label="Hear the navigation menu" tabindex="0">
+        🔊 Hear Menu
+      </button>
+    </nav>
+     
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
+
+    <!-- Stress Section with TTS -->
+    <section class="section__container classes__container" id="stress">
+      <p class="section__subheader">YOGA CLASSES</p>
+      <h2 class="section__header">Stress</h2>
+      <img src="assets/stress.png" alt="Stress Yoga Class" /><br><br>
+      <h2>Related Programs</h2>
+      <h3 style="color:grey">Meditation makes you efficient & energetic, stress-free and joyful.</h3>
+      <button class="tts-btn" onclick="readText('Stress class: Meditation makes you efficient, energetic, stress-free and joyful.')">🔊</button>
+
+      <div class="classes__grid">
+        <div class="classes__image">
+          <img src="assets/s1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/s2.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/s3.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anger Section with TTS -->
+    <section class="section__container classes__container" id="an">
+      <p class="section__subheader">YOGA CLASSES</p>
+      <h2 class="section__header">Anger</h2>
+      <img src="assets/anger.png" alt="Anger Yoga Class" /><br><br>
+      <h2>Related Programs</h2>
+      <h3 style="color:grey">Make your anger expensive and your smile free!</h3>
+      <button class="tts-btn" onclick="readText('Anger class: Make your anger expensive and your smile free.')">🔊</button>
+
+      <div class="classes__grid">
+        <div class="classes__image">
+          <img src="assets/s1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/a1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/s3.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depression Section with TTS -->
+    <section class="section__container classes__container" id="de">
+      <p class="section__subheader">YOGA CLASSES</p>
+      <h2 class="section__header">Depression</h2>
+      <img src="assets/depression.png" alt="Depression Yoga Class" /><br><br>
+      <h2>Related Programs</h2>
+      <h3 style="color:grey">Meditation is the key to eliminate depression.</h3>
+      <button class="tts-btn" onclick="readText('Depression class: Meditation is the key to eliminate depression.')">🔊</button>
+
+      <div class="classes__grid">
+        <div class="classes__image">
+          <img src="assets/s1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/a1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/s3.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weight Loss Section with TTS -->
+    <section class="section__container classes__container" id="we">
+      <p class="section__subheader">YOGA CLASSES</p>
+      <h2 class="section__header">Weight loss</h2>
+      <img src="assets/weight.png" alt="Weight Loss Yoga Class" /><br><br>
+      <h2>Related Programs</h2>
+      <h3 style="color:grey">Holistic solutions for life's problems.</h3>
+      <button class="tts-btn" onclick="readText('Weight loss class: Holistic solutions for life\'s problems.')">🔊</button>
+
+      <div class="classes__grid">
+        <div class="classes__image">
+          <img src="assets/s2.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/w1.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/w2.png" alt="classes" />
+          <div class="classes__content">
+            <button class="btn classes__btn">View More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for Text-to-Speech -->
+    <script>
+      function readText(text) {
+        if ('speechSynthesis' in window) {
+          const speech = new SpeechSynthesisUtterance(text);
+          speech.lang = 'en-US';
+          window.speechSynthesis.speak(speech);
+        } else {
+          alert('Text-to-Speech is not supported in this browser.');
+        }
+      }
+
+    document.getElementById("nav-tts-btn")
+    .addEventListener("click", function () {
+      readText(
+        "Menu: Home, Classes, Membership, About, Blog, Contact."
+      );
+    });
+
+    // Trigger TTS on focus for links and buttons
+    const buttons = document.querySelectorAll("button, a");
+
+buttons.forEach((button) => {
+  button.addEventListener("focus", () => {
+    readText(button.textContent || button.ariaLabel);
+  });
+});
+
+  </script>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <p>Welcome to YogaLife, where we bring mindfulness and peace to your everyday life through yoga. Join us for a journey of wellness and balance.</p>
+        </div>
+        <div class="footer-column">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <a href="#"><img src="assets/facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="assets/twitter.png" alt="Twitter" /></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Register | Divine Yoga</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="signup-box">
+            <div class="company-header">
+                <img src="assets/logo.png" alt="logo">
+                <h5>DIVINE YOGA</h5>
+            </div>
+            <h1>Registration</h1>
+            <h4>It's free and only takes a minute</h4>
+            <form name="registerForm" onsubmit="return validateForm()">
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="Enter your first name" onblur="validateFirstName()">
+                <div class="error" id="firstNameError"></div>
+                
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Enter your last name" onblur="validateLastName()">
+                <div class="error" id="lastNameError"></div>
+                
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" onblur="validateEmail()">
+                <div class="error" id="emailError"></div>
+                
+                <!-- New phone input -->
+                <label>Phone Number</label>
+                <input type="text" name="phone" placeholder="Enter your phone number" onblur="validatePhone()">
+                <div class="error" id="phoneError"></div>
+                
+                <!-- New yoga style input -->
+                <label>Preferred Yoga Style</label>
+                <input type="text" name="yogaStyle" placeholder="Enter your preferred yoga style" onblur="validateYogaStyle()">
+                <div class="error" id="yogaStyleError"></div>
+                
+                <input type="submit" value="Register">
+                <a class="goback" href="index.html">GO BACK</a>
+            </form>
+            <p>
+                By clicking the Register button, you agree to our 
+                <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+
+        <script>
+            // Check if the first letter is uppercase
+            function startsWithUpperCase(str) {
+                return /^[A-Z]/.test(str);
+            }
+
+            function validateFirstName() {
+                var firstName = document.forms["registerForm"]["firstName"].value.trim(); // Trim spaces
+                var error = document.getElementById("firstNameError");
+                if (firstName == "") {
+                    error.textContent = "First Name is required";
+                    return false;
+                } else if (!startsWithUpperCase(firstName)) {
+                    error.textContent = "First Name should start with a capital letter";
+                    return false;
+                } else {
+                    error.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateLastName() {
+                var lastName = document.forms["registerForm"]["lastName"].value.trim(); // Trim spaces
+                var error = document.getElementById("lastNameError");
+                if (lastName == "") {
+                    error.textContent = "Last Name is required";
+                    return false;
+                } else if (!startsWithUpperCase(lastName)) {
+                    error.textContent = "Last Name should start with a capital letter";
+                    return false;
+                } else {
+                    error.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateEmail() {
+                var email = document.forms["registerForm"]["email"].value.trim(); // Trim spaces
+                var error = document.getElementById("emailError");
+                var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (email == "") {
+                    error.textContent = "Email is required";
+                    return false;
+                } else if (!email.match(emailPattern)) {
+                    error.textContent = "Please enter a valid email";
+                    return false;
+                } else {
+                    error.textContent = "";
+                    return true;
+                }
+            }
+
+            // Validate phone number
+            function validatePhone() {
+                var phone = document.forms["registerForm"]["phone"].value.trim();
+                var error = document.getElementById("phoneError");
+                var phonePattern = /^[0-9]{10}$/;
+                if (phone == "") {
+                    error.textContent = "Phone number is required";
+                    return false;
+                } else if (!phone.match(phonePattern)) {
+                    error.textContent = "Please enter a valid 10-digit phone number";
+                    return false;
+                } else {
+                    error.textContent = "";
+                    return true;
+                }
+            }
+
+            // Validate preferred yoga style
+            function validateYogaStyle() {
+                var yogaStyle = document.forms["registerForm"]["yogaStyle"].value.trim();
+                var error = document.getElementById("yogaStyleError");
+                if (yogaStyle == "") {
+                    error.textContent = "Preferred Yoga Style is required";
+                    return false;
+                } else {
+                    error.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateForm() {
+                console.log("Form is being validated...");
+                // Run individual field validations
+                if (
+                    validateFirstName() &&
+                    validateLastName() &&
+                    validateEmail() &&
+                    validatePhone() &&
+                    validateYogaStyle()
+                ) {
+                    alert("Registration successful!");
+                    return true;
+                } else {
+                    return false; // Prevent submission if validation fails
+                }
+            }
+        </script>
+    </body>
+</html>
